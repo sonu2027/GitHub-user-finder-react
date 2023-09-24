@@ -24,12 +24,16 @@ function Avatar(props) {
         setAvatar([
             response.data.avatar_url,
             response.data.name,
+            response.data.id,
+            response.data.location,
             response.data.created_at,
+            response.data.public_repos,
+            response.data.repos_url,
             response.data.followers,
+            response.data.followers_url,
             response.data.following,
-            response.data.followers_url
+            response.data.following_url
         ])
-
     }
 
 
@@ -42,10 +46,15 @@ function Avatar(props) {
         <>
             <img src={avatar[0]} alt="Image" />
             <div><b>{avatar[1]}</b></div>
-            <div>Created at: {avatar[2]}</div>
-            <div>Followers: {avatar[3]}</div>
-            <p>Following: {avatar[4]}</p>
-            <a href={avatar[5]}>Followers url</a>
+            <div>ID: {avatar[2]}</div>
+            <div>Location: {avatar[3]}</div>
+            <div>Created at: {avatar[4]}</div>
+            <div>Public Repos: {avatar[5]}</div>
+            <a href={avatar[6]}>Repos url</a>
+            <div>Followers: {avatar[7]}</div>
+            <a href={avatar[8]}>Followers url</a>
+            <p>Following: {avatar[9]}</p>
+            <a href={avatar[10]}>Follwing url</a>
         </>
     )
 }
