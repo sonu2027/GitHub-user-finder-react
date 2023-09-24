@@ -1,0 +1,6 @@
+img{
+    width: 12rem;
+}
+img, div, p, a{
+    line-height: 1.5rem;
+}
