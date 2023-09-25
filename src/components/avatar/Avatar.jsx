@@ -38,23 +38,32 @@ function Avatar(props) {
 
 
     useEffect(() => {
-        downloadAvatar()
-        console.log("Downloaded1");
-    }, [])
+        if (props.username != "") {
+            downloadAvatar()
+            console.log("Downloadeding");
+        }
+        else {
+            console.log("Not started downloadeding yet");
+        }
+    }, [props.username])
 
     return (
         <>
-            <img src={avatar[0]} alt="Image" />
-            <div><b>{avatar[1]}</b></div>
-            <div>ID: {avatar[2]}</div>
-            <div>Location: {avatar[3]}</div>
-            <div>Created at: {avatar[4]}</div>
-            <div>Public Repos: {avatar[5]}</div>
-            <a href={avatar[6]}>Repos url</a>
-            <div>Followers: {avatar[7]}</div>
-            <a href={avatar[8]}>Followers url</a>
-            <p>Following: {avatar[9]}</p>
-            <a href={avatar[10]}>Follwing url</a>
+            {props.username != "" ?
+                <>
+                    <img src={avatar[0]} alt="Image" />
+                    <div><b>{avatar[1]}</b></div>
+                    <div>ID: {avatar[2]}</div>
+                    <div>Location: {avatar[3]}</div>
+                    <div>Created at: {avatar[4]}</div>
+                    <div>Public Repos: {avatar[5]}</div>
+                    <a href={avatar[6]}>Repos url</a>
+                    <div>Followers: {avatar[7]}</div>
+                    <a href={avatar[8]}>Followers url</a>
+                    <p>Following: {avatar[9]}</p>
+                    <a href={avatar[10]}>Follwing url</a>
+                </> :
+                ""}
         </>
     )
 }
